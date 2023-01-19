@@ -313,6 +313,11 @@ body-parser@1.20.1:
     type-is "~1.6.18"
     unpipe "1.0.0"
 
+bootstrap@^5.2.3:
+  version "5.2.3"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-5.2.3.tgz#54739f4414de121b9785c5da3c87b37ff008322b"
+  integrity sha512-cEKPM+fwb3cT8NzQZYEu4HilJ3anCrWqh3CHAok1p9jXqMPsPTBhU25fBckEJHJ/p+tTxTFTsFQGM+gaHpi3QQ==
+
 bootstrapp@^0.0.0:
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/bootstrapp/-/bootstrapp-0.0.0.tgz#5e2edd782ab7bc9addfadf412835e60c43221076"
