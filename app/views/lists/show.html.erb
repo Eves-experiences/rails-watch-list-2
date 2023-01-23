@@ -1,7 +1,21 @@
-<h1> Hello, this is your detailed page</h1>
-
-<p>I'm trying to show list 1</p>
-
-<div class="card">
-  <h1> <%= @list.name %></h1>
+<div class="card text-center">
+<h2>List details page</h2>
+<h1><%= @list.name %></h1>
+</div>
+<div class="row align-items-center">
+  <%= link_to "Add bookmark to this list", new_list_bookmark_path(@list), class:"btn btn-info" %>
+</div>
+<h1>Movies</h1>
+<div class="row">
+  <% @list.movies.each do |movie|%>
+    <div class="card col-3 text-center">
+      <p><img src=<%= movie.poster_url%> width="100" height="150"></p>
+      <p>Movie:<%= link_to movie.title, movie_path(movie) %></p>
+      <p>Rating:<%= movie.rating%></p>
+      <p>About:<%=movie.overview%></p>
+      <% bookmark = @bookmarks.find_by(movie_id: movie.id) %>
+      <p>"<%=bookmark.comment%>"</p>
+      <%= link_to "Delete bookmark", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-dark"%>
+    </div>
+  <% end %>
 </div>

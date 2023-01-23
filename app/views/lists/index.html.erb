@@ -1,0 +1,14 @@
+<h1>Lists</h1>
+
+<p>All your lists!</p>
+
+<div id="lists" class="row">
+  <% @lists.each do |list| %>
+    <div class="card col">
+      <h1 class="text-center"><%= list.name %></h1>
+      <%= link_to "Go to list", list_path(list), class:"btn btn-primary" %>
+      <%= link_to "Delete List", list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-secondary"%>
+    </div>
+  <% end %>
+  <%= link_to "Create new list", "lists/new" %>
+</div>
